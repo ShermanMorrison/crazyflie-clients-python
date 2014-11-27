@@ -49,6 +49,7 @@ import glob
 import traceback
 import logging
 import shutil
+from cfclient.utils.aicontroller import AiController
 
 logger = logging.getLogger(__name__)
 
@@ -68,9 +69,9 @@ class JoystickReader:
     """
     inputConfig = []
 
-    def __init__(self, do_device_discovery=True):
+    def __init__(self, do_device_discovery=True, cf=None):
         # TODO: Should be OS dependant
-        self.inputdevice = PyGameReader()
+        self.inputdevice = AiController(cf)
         
         self._min_thrust = 0
         self._max_thrust = 0
