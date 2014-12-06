@@ -311,6 +311,9 @@ class MainUI(QtGui.QMainWindow, main_window_class):
 
     def updateBatteryVoltage(self, timestamp, data, logconf):
         self.batteryBar.setValue(int(data["pm.vbat"] * 1000))
+        cfclient.ui.pluginhelper.inputDeviceReader.inputdevice.setBatteryData(int(data["pm.vbat"]) * 1000)
+        #cfclient.ui.pluginhelper.inputDeviceReader = self.joystickReader
+
 
     def connectionDone(self, linkURI):
         self.setUIState(UIState.CONNECTED, linkURI)

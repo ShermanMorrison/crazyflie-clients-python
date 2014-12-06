@@ -53,7 +53,7 @@ from cfclient.utils.aicontroller import AiController
 
 logger = logging.getLogger(__name__)
 
-from cfclient.utils.pygamereader import PyGameReader
+#from cfclient.utils.pygamereader import PyGameReader
 from cfclient.utils.config import Config
 from cfclient.utils.config_manager import ConfigManager
 
